@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="29c10b8a-5325-4141-832e-ddadffaf98dd" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicd-jenkinsFlow" doc:id="aebf9ff4-fd3e-45bc-89dc-ccbc55367ef8" >
+		<http:listener doc:name="Listener" doc:id="737f782e-405e-429b-a45a-e9ded13c4038" config-ref="HTTP_Listener_config" path="/api"/>
+		<set-payload value='This is ci/cd jenkins pipeline test deployment to cloudhub' doc:name="Set Payload" doc:id="0ffb524a-3fbe-490a-af33-ef25dd87b5b0" />
+		<logger level="INFO" doc:name="Logger" doc:id="622d702d-db47-43a0-a24d-3d07f583368c" message="payload = #[payload]" category="jenkins testing"/>
+	</flow>
+</mule>
