@@ -15,7 +15,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<app.runtime>4.2.0</app.runtime>
-		<!-- <mule.maven.plugin.version>3.5.0</mule.maven.plugin.version> -->
+		<mule.maven.plugin.version>3.5.0</mule.maven.plugin.version>
 	</properties>
 
 	<build>
@@ -23,7 +23,7 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<!-- <version>${mule.maven.plugin.version}</version> -->
+				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
 				</configuration>
@@ -107,13 +107,6 @@
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository>
-        
-        <pluginRepository>
-        <id>mule-public</id>
-        <url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
-    </pluginRepository>
-        
-        
     </pluginRepositories>
 
 </project>
